@@ -21,6 +21,8 @@ class GameInfo:
     def game_finished(self):
         return self.level > self.LEVELS
 
+
+
     def start_level(self):
         self.started = True
         self.level_start_time = time.time()
