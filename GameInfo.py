@@ -21,3 +21,11 @@ class GameInfo:
     def game_finished(self):
         return self.level > self.LEVELS
 
+    def start_level(self):
+        self.started = True
+        self.level_start_time = time.time()
+
+    def get_level_time(self):
+        if not self.started:
+            return 0
+        return round(time.time() - self.level_start_time)
