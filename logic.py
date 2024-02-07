@@ -4,29 +4,6 @@ from Constants import HEIGHT, TRACK_BORDER_MASK, FINISH_MASK, FINISH_POSITION, W
 from utils import blit_text_center
 
 
-def handle_collision(player_car, computer_car, game_info):
-    if player_car.collide(TRACK_BORDER_MASK) != None:
-        player_car.bounce()
-
-    computer_finish_poi_collide = computer_car.collide(
-        FINISH_MASK, *FINISH_POSITION)
-    if computer_finish_poi_collide != None:
-        blit_text_center(WIN, MAIN_FONT, "You lost!")
-        pygame.display.update()
-        pygame.time.wait(5000)
-        game_info.reset()
-        player_car.reset()
-        computer_car.reset()
-
-    player_finish_poi_collide = player_car.collide(
-        FINISH_MASK, *FINISH_POSITION)
-    if player_finish_poi_collide != None:
-        if player_finish_poi_collide[1] == 0:
-            player_car.bounce()
-        else:
-            game_info.next_level()
-            player_car.reset()
-            computer_car.next_level(game_info.level)
 
 
 def draw(win, images, player_car, computer_car, game_info):
@@ -67,3 +44,28 @@ def move_player(player_car):
 
     if not moved:
         player_car.reduce_speed()
+
+
+def handle_collision(player_car, computer_car, game_info):
+    if player_car.collide(TRACK_BORDER_MASK) != None:
+        player_car.bounce()
+
+    computer_finish_poi_collide = computer_car.collide(
+        FINISH_MASK, *FINISH_POSITION)
+    if computer_finish_poi_collide != None:
+        blit_text_center(WIN, MAIN_FONT, "You lost!")
+        pygame.display.update()
+        pygame.time.wait(5000)
+        game_info.reset()
+        player_car.reset()
+        computer_car.reset()
+
+    player_finish_poi_collide = player_car.collide(
+        FINISH_MASK, *FINISH_POSITION)
+    if player_finish_poi_collide != None:
+        if player_finish_poi_collide[1] == 0:
+            player_car.bounce()
+        else:
+            game_info.next_level()
+            player_car.reset()
+            computer_car.next_level(game_info.level)
