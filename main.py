@@ -1,7 +1,6 @@
 import pygame
 
-from Constants import FINISH_POSITION, WIN, GRASS, TRACK, \
-    FINISH, TRACK_BORDER, PATH, FPS, MAIN_FONT
+from Constants import FINISH_POSITION, WIN, GRASS, TRACK, FINISH, TRACK_BORDER, PATH, FPS, MAIN_FONT
 from GameInfo import GameInfo
 from PlayerCar import PlayerCar
 from ComputerCar import ComputerCar
