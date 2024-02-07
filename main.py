@@ -5,7 +5,8 @@ from Constants import FINISH_POSITION, WIN, GRASS, TRACK, \
 from GameInfo import GameInfo
 from PlayerCar import PlayerCar
 from ComputerCar import ComputerCar
-
+from logic import draw, move_player, handle_collision
+from utils import blit_text_center
 
 run = True
 clock = pygame.time.Clock()
