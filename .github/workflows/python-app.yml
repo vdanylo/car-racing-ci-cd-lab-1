@@ -2,18 +2,18 @@ name: Car Racing Game
 
 on:
   push:
-    branches: [master]
+    branches: [main] # Assuming your main branch is named 'main'
   pull_request:
-    branches: [master]
+    branches: [main] # Assuming your main branch is named 'main'
 
 jobs:
   build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python 3.12
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v2
         with:
           python-version: "3.12"
 
