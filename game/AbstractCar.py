@@ -1,7 +1,5 @@
 import math
-
 import pygame
-
 from utils import blit_rotate_center
 
 
