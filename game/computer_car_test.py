@@ -1,5 +1,5 @@
-from ComputerCar import ComputerCar
-from Constants import PATH
+from game.ComputerCar import ComputerCar
+from game.Constants import PATH
 
 
 def test_move():
