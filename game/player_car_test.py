@@ -1,5 +1,5 @@
 import pytest
-from game.PlayerCar import PlayerCar
+from PlayerCar import PlayerCar
 
 @pytest.fixture
 def player_car():
